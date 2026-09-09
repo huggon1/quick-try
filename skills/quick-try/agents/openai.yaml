@@ -1,0 +1,4 @@
+interface:
+  display_name: "Quick Try"
+  short_description: "Turn an interesting project into a prepared trial"
+  default_prompt: "Use $quick-try to inspect available capabilities, propose a hands-on trial for this project, and run it after I confirm the plan."

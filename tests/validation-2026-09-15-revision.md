@@ -37,6 +37,6 @@ Raw trial artifacts were retained locally under `.local/validation/ripgrep/` (ig
 
 ## Package checks and limits
 
-Frontmatter validator passed using temporary PyYAML via uv, all eight local skill references resolved, and whitespace checks passed. Installed package is compared recursively with source after update; obsolete reflection reference must be absent in both.
+Frontmatter validator passed using temporary PyYAML via uv, all local skill references resolved, and whitespace checks passed. The obsolete webpage/bundle renderer, its references, and its tests were removed; the installed package is compared recursively with source after update.
 
 This is stronger evidence for branching, confirmation, termination, and local-tool execution than the first review-only pass. It does not prove prompt reliability across models, live web search stopping behavior, every native skill host, or real generation/UI/automation integrations. Search limits were evaluated in supplied-document and unavailable-tool cases; no live multi-round web search was run. Personalization quality still requires real user trials. These limits are explicit rather than counted as passes.

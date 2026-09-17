@@ -1,27 +1,24 @@
 # Quick Try
 
-This repository maintains the portable [`quick-try`](skills/quick-try/SKILL.md) skill.
+把感兴趣的项目变成与你有关、可以自由探索的短体验。
 
-## Repository layout
+Quick Try 先读项目承诺，和你简短聊聊兴趣、素材和时间，判断项目是否适合短时间体验。信息不足时做有范围和时间上限的搜索，也可以建议跳过。适合时提出体验场方案；**你确认方案后**，agent 才准备隔离环境和真实入口。交付后可以随意探索，skill 的职责到此结束。
+
+支持四种核心体验：多轮协作、文件或代码处理、内容生成、交互应用。自动化仅支持有真实单次运行或回放入口的场景。需要生产接入、长期使用、大型部署才能成立的项目会提前说明限制。
+
+## 使用
+
+把 `skills/quick-try` 安装到宿主支持的 skill 目录，然后发送：
 
 ```text
-.
-├── AGENTS.md
-├── README.md
-└── skills/
-    └── quick-try/
+$quick-try <项目链接或本地路径>
+我想看看它能不能改善我最近做的……
 ```
 
-The skill directory is self-contained. Its instructions, conditional references, renderer assets, helper scripts, and behavior tests travel together. Repository-level files only describe how the source is maintained.
+也可以只提供项目，让 agent 在简短沟通中帮助选择素材。会话管理、CLI、浏览器都是可选宿主能力；没有自动入口时，会说明需要你完成的最少接管动作。
 
-## Validation
+默认交付项目本身的入口和一份轻量的本地体验记录，不生成网页，不要求 A/B，不改全局配置。读取本地素材不等于允许把它上传到外部服务。
 
-Run the skill's behavior tests from the repository root:
+## 维护
 
-```sh
-python3 -m unittest discover -s skills/quick-try/tests -v
-```
-
-When changing the generated reader, also run the browser check described in [`skills/quick-try/tests/README.md`](skills/quick-try/tests/README.md) and inspect its screenshots.
-
-The repository does not contain prepared experiences or research results. Quick Try creates those in a task-owned output location when the skill is used.
+主入口是 [SKILL.md](skills/quick-try/SKILL.md)，类型配方和准备规则按需读取。质量走查场景位于 [tests/scenarios.md](tests/scenarios.md)。体验数据与测试产物放在仓库外。
